@@ -61,7 +61,31 @@
       text-align: center;
     }
     .image-with-text-custom .text-container {
-      padding: 10px;
+      padding: {{ section.settings.mobile_text_padding }}px;
+      text-align: {{ section.settings.mobile_text_alignment }};
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .image-with-text-custom {
+      display: flex;
+      flex-direction: column;
+    }
+    .image-with-text-custom .image-container {
+      margin-bottom: 15px;
+    }
+    .image-with-text-custom .text-container {
+      padding: {{ section.settings.tablet_text_padding }}px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .image-with-text-custom {
+      display: flex;
+      flex-direction: row;
+    }
+    .image-with-text-custom .text-container {
+      padding: {{ section.settings.desktop_text_padding }}px;
     }
   }
 </style>
@@ -122,7 +146,7 @@
       "label": "Text Padding",
       "min": 0,
       "max": 50,
-      "default": 10,
+      "default": 0,
       "unit": "px"
     },
     {
@@ -135,6 +159,44 @@
         { "value": "right", "label": "Right" }
       ],
       "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_padding",
+      "label": "Mobile Text Padding",
+      "min": 0,
+      "max": 50,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "mobile_text_alignment",
+      "label": "Mobile Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "tablet_text_padding",
+      "label": "Tablet Text Padding",
+      "min": 0,
+      "max": 50,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_text_padding",
+      "label": "Desktop Text Padding",
+      "min": 0,
+      "max": 50,
+      "default": 0,
+      "unit": "px"
     }
   ],
   "blocks": [
@@ -173,4 +235,3 @@
   ]
 }
 {% endschema %}
-
