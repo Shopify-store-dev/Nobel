@@ -5,21 +5,26 @@
 {% assign image_position = section.settings.image_position %}
 {% assign image_size = section.settings.image_width %}
 {% if image_size == 'small' %}
-  {% assign image_width = '100px' %}
+  {% assign image_width = '150px' %}
 {% elsif image_size == 'medium' %}
   {% assign image_width = '300px' %}
 {% elsif image_size == 'large' %}
-  {% assign image_width = '500px' %}
+  {% assign image_width = '450px' %}
+{% elsif image_size == 'extra_large' %}
+  {% assign image_width = '600px' %}
+{% elsif image_size == 'full_width' %}
+  {% assign image_width = '100%' %}
 {% endif %}
 
 <section class="image-with-text-custom" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
   {% if section.settings.image %}
     <div class="image-container" style="float: {{ image_position }}; margin: 0 20px;">
       <img 
-        src="{{ section.settings.image | img_url: image_width }}" 
+        src="{{ section.settings.image | img_url: 'master' }}" 
         alt="{{ section.settings.image.alt | escape }}" 
-        width="{{ image_width | remove: 'px' }}" 
-        height="auto" 
+        width="{{ image_width }}" 
+        height="auto"
+        style="width: {{ image_width }};"
       />
     </div>
   {% endif %}
@@ -66,9 +71,11 @@
       "id": "image_width",
       "label": "Image Width",
       "options": [
-        { "value": "small", "label": "Small" },
-        { "value": "medium", "label": "Medium" },
-        { "value": "large", "label": "Large" }
+        { "value": "small", "label": "Small (150px)" },
+        { "value": "medium", "label": "Medium (300px)" },
+        { "value": "large", "label": "Large (450px)" },
+        { "value": "extra_large", "label": "Extra Large (600px)" },
+        { "value": "full_width", "label": "Full Width" }
       ],
       "default": "medium"
     },
@@ -120,7 +127,7 @@
           "default": 16,
           "unit": "px"
         },
-        {
+                {
           "type": "color",
           "id": "text_color",
           "label": "Text Color",
