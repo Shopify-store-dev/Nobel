@@ -45,20 +45,10 @@
         "stack_images_on_mobile": true,
         "show_text_below": false
       }
-    },
-    "custom_liquid_QkXUxn": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
     "main",
-    "image_banner_BarXgj",
-    "custom_liquid_QkXUxn"
+    "image_banner_BarXgj"
   ]
 }
