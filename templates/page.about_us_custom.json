@@ -16,6 +16,14 @@
     "image_banner_BarXgj": {
       "type": "image-banner",
       "blocks": {
+        "heading_Y4TVPE_copy": {
+          "type": "preheading",
+          "settings": {
+            "preheading": "THE WHY",
+            "preheading_size": "20px",
+            "preheading_color": "#81B6DE"
+          }
+        },
         "heading_Y4TVPE": {
           "type": "heading",
           "settings": {
@@ -31,7 +39,7 @@
           }
         }
       },
-      "block_order": ["heading_Y4TVPE", "text_pWPYHA"],
+      "block_order": ["heading_Y4TVPE_copy", "heading_Y4TVPE", "text_pWPYHA"],
       "settings": {
         "image": "shopify://shop_images/bg_about_us.png",
         "image_overlay_opacity": 0,
@@ -46,18 +54,92 @@
         "show_text_below": false
       }
     },
-    "custom_liquid_QkXUxn": {
-      "type": "custom-liquid",
+    "image_with_text_ArpRhU": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_PX48qQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "The story of NobelCar",
+            "heading_size": "h1"
+          }
+        },
+        "text_4wTLHh": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The inspiration for NobelCar came during a family road trip when we realized how much time we spend in our cars. Despite having a reliable vehicle, we noticed that the interior lacked the comfort and convenience we desired for our long journeys.<br/><br/>This sparked an idea: what if we could transform car interiors to feel like a second home? We began researching and testing various accessories, from seat covers to vacuum cleaners, aiming to enhance the driving experience.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": ["heading_PX48qQ", "text_4wTLHh"],
+      "custom_css": [
+        ".image-with-text__content {padding: 0; padding-top: 15px; padding-right: 15px;}"
+      ],
       "settings": {
-        "custom_liquid": "<div class=\"main-content\">\n<h1>The story of <span style=\"color: #3A82F7;\">NobelCar</span></h1>\n<img src=\"{{ image_url }}\" alt=\"NobelCar Family Road Trip\" class=\"image-float\" style=\"width: {{ settings.width_img }}; height: {{ settings.height_img }};\" />\n<p>The inspiration for NobelCar came during a family road trip when we realized how much time we spend in our cars. Despite having a reliable vehicle, we noticed that the interior lacked the comfort and convenience we desired for our long journeys.</p>\n<p>This sparked an idea: what if we could transform car interiors to feel like a second home? We began researching and testing various accessories, from seat covers to vacuum cleaners, aiming to enhance the driving experience.</p>\n<p>After months of hard work and dedication, NobelCar was born, with a mission to make every car ride a comfortable and enjoyable adventure.</p>\n</div>",
+        "image": "shopify://shop_images/pic2.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-1",
         "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52,
-        "image_url": "shopify://shop_images/your_image.png",
-        "width_img": "400px",
-        "height_img": "250px"
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_N3tyft": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_YLbbrN": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our mission",
+            "heading_size": "h2"
+          }
+        },
+        "text_BYiz8x": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_3a96P9": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": ["heading_YLbbrN", "text_BYiz8x", "button_3a96P9"],
+      "settings": {
+        "image": "shopify://shop_images/pic3.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
-  "order": ["main", "image_banner_BarXgj", "custom_liquid_QkXUxn"]
+  "order": [
+    "main",
+    "image_banner_BarXgj",
+    "image_with_text_ArpRhU",
+    "image_with_text_N3tyft"
+  ]
 }
