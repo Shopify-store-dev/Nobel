@@ -1,0 +1,114 @@
+{% comment %}
+  This is the template for the "Image with Text Custom" section.
+{% endcomment %}
+
+<section class="image-with-text-custom" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  {% if section.settings.image %}
+    <div class="image-container">
+      <img src="{{ section.settings.image | img_url: section.settings.image_width }}" alt="{{ section.settings.image.alt | escape }}" />
+    </div>
+  {% endif %}
+
+  <div class="text-container">
+    {% for block in section.blocks %}
+      <div class="text-block" style="font-size: {{ block.settings.font_size }}px; color: {{ block.settings.text_color }};">
+        {{ block.settings.text }}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+  .image-with-text-custom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .image-with-text-custom .image-container {
+    flex: 1 1 auto;
+    margin-right: 20px;
+  }
+  .image-with-text-custom .text-container {
+    flex: 2 1 auto;
+  }
+  .image-with-text-custom .text-block {
+    margin-bottom: 20px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Image with Text Custom",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_width",
+      "label": "Image Width",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "default": 20,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "range",
+          "id": "font_size",
+          "label": "Font Size",
+          "min": 12,
+          "max": 48,
+          "default": 16,
+          "unit": "px"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#000000"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with Text Custom",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
