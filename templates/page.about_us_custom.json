@@ -5,7 +5,8 @@
       "custom_css": [
         "h1 {font-size: 20px;}",
         "body {display: flex; flex-direction: column; min-height: 100vh; margin: 0;}",
-        ".main-content {flex: 1; display: flex; flex-direction: column; justify-content: center;}"
+        ".main-content {flex: 1; display: flex; flex-direction: column; justify-content: center;}",
+        ".image-float {float: left; margin-right: 20px; margin-bottom: 20px; width: 300px; height: auto;}"
       ],
       "settings": {
         "padding_top": 0,
@@ -48,11 +49,11 @@
     "custom_liquid_QkXUxn": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div class=\"main-content\">\n<h1>The story of <span style=\"color: #3A82F7;\">NobelCar</span></h1>\n<p>The inspiration for NobelCar came during a family road trip when we realized how much time we spend in our cars. Despite having a reliable vehicle, we noticed that the interior lacked the comfort and convenience we desired for our long journeys.</p>\n<p>This sparked an idea: what if we could transform car interiors to feel like a second home? We began researching and testing various accessories, from seat covers to vacuum cleaners, aiming to enhance the driving experience.</p>\n<p>After months of hard work and dedication, NobelCar was born, with a mission to make every car ride a comfortable and enjoyable adventure.</p>\n<img src=\"{{ settings.image_url }}\" alt=\"NobelCar Family Road Trip\" style=\"width: 100%; height: auto; margin-top: 20px;\" />\n</div>",
+        "custom_liquid": "<div class=\"main-content\">\n<h1>The story of <span style=\"color: #3A82F7;\">NobelCar</span></h1>\n<img src=\"{{ image_url }}\" alt=\"NobelCar Family Road Trip\" class=\"image-float\" />\n<p>The inspiration for NobelCar came during a family road trip when we realized how much time we spend in our cars. Despite having a reliable vehicle, we noticed that the interior lacked the comfort and convenience we desired for our long journeys.</p>\n<p>This sparked an idea: what if we could transform car interiors to feel like a second home? We began researching and testing various accessories, from seat covers to vacuum cleaners, aiming to enhance the driving experience.</p>\n<p>After months of hard work and dedication, NobelCar was born, with a mission to make every car ride a comfortable and enjoyable adventure.</p>\n</div>",
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 52,
-        "image_url": "shopify://shop_images/your_image.png"
+        "image_url": "https://cdn.shopify.com/s/files/1/0658/6073/1049/files/pic2.png?v=1716459037.png"
       }
     }
   },
