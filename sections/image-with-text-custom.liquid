@@ -29,7 +29,7 @@
     </div>
   {% endif %}
 
-  <div class="text-container" style="overflow: hidden;">
+  <div class="text-container" style="overflow: hidden; padding: {{ section.settings.text_padding }}px; text-align: {{ section.settings.text_alignment }};">
     {% for block in section.blocks %}
       <div class="text-block" style="font-size: {{ block.settings.font_size }}px; color: {{ block.settings.text_color }};">
         {{ block.settings.text }}
@@ -49,6 +49,20 @@
   }
   .image-with-text-custom .text-block {
     margin-bottom: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .image-with-text-custom {
+      display: block;
+    }
+    .image-with-text-custom .image-container {
+      float: none;
+      margin: 0 auto 20px auto;
+      text-align: center;
+    }
+    .image-with-text-custom .text-container {
+      padding: 10px;
+    }
   }
 </style>
 
@@ -101,6 +115,26 @@
       "max": 100,
       "default": 20,
       "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "text_padding",
+      "label": "Text Padding",
+      "min": 0,
+      "max": 50,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
     }
   ],
   "blocks": [
@@ -139,3 +173,4 @@
   ]
 }
 {% endschema %}
+
