@@ -3,15 +3,64 @@
     "main": {
       "type": "main-page",
       "custom_css": [
-        "h2 {font-size: 14px;}"
+        "h1 {font-size: 22px;}"
       ],
       "settings": {
-        "padding_top": 4,
-        "padding_bottom": 4
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_banner_aRCynY": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_8XDmKL": {
+          "type": "heading",
+          "settings": {
+            "heading": "About Nobelcar Shop",
+            "heading_size": "h2"
+          }
+        },
+        "text_8QM9xi": {
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "buttons_dgjBVb": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_8XDmKL",
+        "text_8QM9xi",
+        "buttons_dgjBVb"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/bg_about_us.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "image_banner_aRCynY"
   ]
 }
