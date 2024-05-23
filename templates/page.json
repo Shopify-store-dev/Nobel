@@ -23,26 +23,14 @@
         "text_pWPYHA": {
           "type": "text",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
-        "buttons_tcVBXn": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Button label",
-            "button_link_1": "",
-            "button_style_secondary_1": false,
-            "button_label_2": "Button label",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "text": "Your car is not just a means of transportation",
+            "text_style": "subtitle"
           }
         }
       },
       "block_order": [
         "heading_Y4TVPE",
-        "text_pWPYHA",
-        "buttons_tcVBXn"
+        "text_pWPYHA"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/bg_about_us.png",
