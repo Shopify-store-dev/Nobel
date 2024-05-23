@@ -2,15 +2,25 @@
   This is the template for the "Image with Text Custom" section.
 {% endcomment %}
 
+{% assign image_position = section.settings.image_position %}
+{% assign image_size = section.settings.image_width %}
+{% if image_size == 'small' %}
+  {% assign image_width = '100px' %}
+{% elsif image_size == 'medium' %}
+  {% assign image_width = '300px' %}
+{% elsif image_size == 'large' %}
+  {% assign image_width = '500px' %}
+{% endif %}
+
 <section class="image-with-text-custom" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
   {% if section.settings.image %}
-    <div class="image-container">
+    <div class="image-container" style="float: {{ image_position }}; margin: 0 20px;">
       <img 
-        src="{{ section.settings.image | img_url: section.settings.image_width }}" 
+        src="{{ section.settings.image | img_url: image_width }}" 
         alt="{{ section.settings.image.alt | escape }}" 
-        width="{{ section.settings.image.width }}" 
-        height="{{ section.settings.image.height }}" 
-    />
+        width="{{ image_width | remove: 'px' }}" 
+        height="auto" 
+      />
     </div>
   {% endif %}
 
@@ -21,6 +31,7 @@
       </div>
     {% endfor %}
   </div>
+  <div style="clear: both;"></div>
 </section>
 
 <style>
@@ -32,7 +43,6 @@
   }
   .image-with-text-custom .image-container {
     flex: 1 1 auto;
-    margin-right: 20px;
   }
   .image-with-text-custom .text-container {
     flex: 2 1 auto;
@@ -61,6 +71,16 @@
         { "value": "large", "label": "Large" }
       ],
       "default": "medium"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
     },
     {
       "type": "range",
