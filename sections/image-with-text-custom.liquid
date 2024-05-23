@@ -18,18 +18,18 @@
 
 <section class="image-with-text-custom" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
   {% if section.settings.image %}
-    <div class="image-container" style="float: {{ image_position }}; margin: 0 20px;">
+    <div class="image-container" style="float: {{ image_position }}; margin: 0 20px 20px 0;">
       <img 
         src="{{ section.settings.image | img_url: 'master' }}" 
         alt="{{ section.settings.image.alt | escape }}" 
         width="{{ image_width }}" 
-        height="auto"
+        height="auto" 
         style="width: {{ image_width }};"
       />
     </div>
   {% endif %}
 
-  <div class="text-container">
+  <div class="text-container" style="overflow: hidden;">
     {% for block in section.blocks %}
       <div class="text-block" style="font-size: {{ block.settings.font_size }}px; color: {{ block.settings.text_color }};">
         {{ block.settings.text }}
@@ -40,17 +40,12 @@
 </section>
 
 <style>
-  .image-with-text-custom {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
   .image-with-text-custom .image-container {
-    flex: 1 1 auto;
+    margin-right: 20px;
+    margin-bottom: 20px;
   }
   .image-with-text-custom .text-container {
-    flex: 2 1 auto;
+    overflow: hidden;
   }
   .image-with-text-custom .text-block {
     margin-bottom: 20px;
@@ -127,7 +122,7 @@
           "default": 16,
           "unit": "px"
         },
-                {
+        {
           "type": "color",
           "id": "text_color",
           "label": "Text Color",
