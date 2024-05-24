@@ -2,6 +2,15 @@
   This is the template for the "Image with Text Custom" section.
 {% endcomment %}
 
+<style>
+  :root {
+    --mobile_text_padding: {{ section.settings.mobile_text_padding }}px;
+    --mobile_text_alignment: {{ section.settings.mobile_text_alignment }}px;
+    --tablet_text_padding: {{ section.settings.tablet_text_padding }}px;
+    --desktop_text_padding: {{ section.settings.desktop_text_padding }}px;
+  }
+</style>
+
 {% assign image_position = section.settings.image_position %}
 {% assign image_size = section.settings.image_width %}
 {% if image_size == 'small' %}
@@ -37,58 +46,6 @@
     {% endfor %}
   </div>
 </section>
-
-
-<style>
-  .image-with-text-custom .image-container {
-    margin-right: 20px;
-    margin-bottom: 20px;
-  }
-  .image-with-text-custom .text-container {
-    overflow: hidden;
-  }
-  .image-with-text-custom .text-block {
-    margin-bottom: 20px;
-  }
-  
-  @media (max-width: 768px) {
-    .image-with-text-custom {
-      display: block;
-    }
-    .image-with-text-custom .image-container {
-      float: none;
-      margin: 0 auto 20px auto;
-      text-align: center;
-    }
-    .image-with-text-custom .text-container {
-      padding: {{ section.settings.mobile_text_padding }}px;
-      text-align: {{ section.settings.mobile_text_alignment }};
-    }
-  }
-
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .image-with-text-custom {
-      display: flex;
-      flex-direction: column;
-    }
-    .image-with-text-custom .image-container {
-      margin-bottom: 15px;
-    }
-    .image-with-text-custom .text-container {
-      padding: {{ section.settings.tablet_text_padding }}px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .image-with-text-custom {
-      display: flex;
-      flex-direction: row;
-    }
-    .image-with-text-custom .text-container {
-      padding: {{ section.settings.desktop_text_padding }}px;
-    }
-  }
-</style>
 
 {% schema %}
 {

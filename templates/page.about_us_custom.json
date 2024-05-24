@@ -48,7 +48,8 @@
         "image_behavior": "none",
         "mobile_content_alignment": "left",
         "padding_top": 36,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "image_position": "left"
       }
     }
   },
