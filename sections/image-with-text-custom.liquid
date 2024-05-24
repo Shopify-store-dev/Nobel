@@ -16,9 +16,9 @@
   {% assign image_width = '100%' %}
 {% endif %}
 
-<section class="image-with-text-custom" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+<section class="image-with-text-custom" style="display: flex; flex-direction: {{ image_position == 'left' ? 'row' : 'row-reverse' }}; padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
   {% if section.settings.image %}
-    <div class="image-container" style="float: {{ image_position }}; margin: 0 20px 20px 0;">
+    <div class="image-container" style="margin: 0 20px 20px 0;">
       <img 
         src="{{ section.settings.image | img_url: 'master' }}" 
         alt="{{ section.settings.image.alt | escape }}" 
@@ -36,8 +36,8 @@
       </div>
     {% endfor %}
   </div>
-  <div style="clear: both;"></div>
 </section>
+
 
 <style>
   .image-with-text-custom .image-container {
