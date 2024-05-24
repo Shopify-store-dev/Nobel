@@ -2,6 +2,9 @@
   This is the template for the "Image with Text Custom" section.
 {% endcomment %}
 
+{{ 'image-with-text-custom.css' | asset_url | stylesheet_tag }}
+
+
 <style>
   :root {
     --mobile_text_padding: {{ section.settings.mobile_text_padding }}px;
