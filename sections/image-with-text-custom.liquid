@@ -4,31 +4,35 @@
 
 {{ 'image-with-text-custom.css' | asset_url | stylesheet_tag }}
 
-
-<style>
-  :root {
-    --mobile_text_padding: {{ section.settings.mobile_text_padding }}px;
-    --mobile_text_alignment: {{ section.settings.mobile_text_alignment }}px;
-    --tablet_text_padding: {{ section.settings.tablet_text_padding }}px;
-    --desktop_text_padding: {{ section.settings.desktop_text_padding }}px;
-  }
-</style>
-
 {% assign image_position = section.settings.image_position %}
 {% assign image_size = section.settings.image_width %}
 {% if image_size == 'small' %}
-  {% assign image_width = '200px' %}
+  {% assign image_width = '150px' %}
 {% elsif image_size == 'medium' %}
-  {% assign image_width = '350px' %}
+  {% assign image_width = '300px' %}
 {% elsif image_size == 'large' %}
-  {% assign image_width = '550px' %}
+  {% assign image_width = '450px' %}
 {% elsif image_size == 'extra_large' %}
-  {% assign image_width = '700px' %}
+  {% assign image_width = '600px' %}
 {% elsif image_size == 'full_width' %}
   {% assign image_width = '100%' %}
 {% endif %}
 
-<section class="image-with-text-custom" style="display: flex; flex-direction: {{ image_position == 'left' ? 'row' : 'row-reverse' }}; padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+<style>
+  :root {
+    --mobile-text-padding: {{ section.settings.mobile_text_padding }}px;
+    --mobile-text-alignment: {{ section.settings.mobile_text_alignment }};
+    --tablet-text-padding: {{ section.settings.tablet_text_padding }}px;
+    --desktop-text-padding: {{ section.settings.desktop_text_padding }}px;
+    --image-position: {{ image_position == 'left' ? 'row' : 'row-reverse' }};
+  }
+</style>
+
+<section 
+  class="image-with-text-custom {{ image_position }}" 
+  style="padding-top: {{ section.settings.padding_top }}px; 
+  padding-bottom: {{ section.settings.padding_bottom }}px;"
+>
   {% if section.settings.image %}
     <div class="image-container" style="margin: 0 20px 20px 0;">
       <img 
@@ -49,6 +53,7 @@
     {% endfor %}
   </div>
 </section>
+
 
 {% schema %}
 {
@@ -88,7 +93,7 @@
       "label": "Padding Top",
       "min": 0,
       "max": 100,
-      "default": 20,
+      "default": 10,
       "unit": "px"
     },
     {
@@ -97,7 +102,7 @@
       "label": "Padding Bottom",
       "min": 0,
       "max": 100,
-      "default": 20,
+      "default": 10,
       "unit": "px"
     },
     {
