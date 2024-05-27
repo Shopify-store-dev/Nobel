@@ -1,83 +1,86 @@
 {
   "name": "Image with Text Custom",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Image"
-    },
-    {
-      "type": "select",
-      "id": "image_width",
-      "label": "Image Width",
-      "options": [
-        { "value": "small", "label": "Small" },
-        { "value": "medium", "label": "Medium" },
-        { "value": "large", "label": "Large" }
-      ],
-      "default": "medium"
-    },
-    {
-      "type": "select",
-      "id": "image_position",
-      "label": "Image Position",
-      "options": [
-        { "value": "left", "label": "Left" },
-        { "value": "right", "label": "Right" }
-      ],
-      "default": "left"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "label": "Padding Top",
-      "min": 0,
-      "max": 100,
-      "default": 20,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "label": "Padding Bottom",
-      "min": 0,
-      "max": 100,
-      "default": 20,
-      "unit": "px"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "text",
-      "name": "Text Block",
-      "settings": [
-        {
-          "type": "text",
-          "id": "text",
-          "label": "Text"
-        },
-        {
-          "type": "range",
-          "id": "font_size",
-          "label": "Font Size",
-          "min": 12,
-          "max": 48,
-          "default": 16,
-          "unit": "px"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text Color",
-          "default": "#000000"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Image with Text Custom",
-      "category": "Custom Sections"
-    }
-  ]
+  "main": {
+    "type": "image-with-text-custom",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "image_width",
+        "label": "Image Width",
+        "options": [
+          { "value": "small", "label": "Small" },
+          { "value": "medium", "label": "Medium" },
+          { "value": "large", "label": "Large" }
+        ],
+        "default": "medium"
+      },
+      {
+        "type": "select",
+        "id": "image_position",
+        "label": "Image Position",
+        "options": [
+          { "value": "left", "label": "Left" },
+          { "value": "right", "label": "Right" }
+        ],
+        "default": "left"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding Top",
+        "min": 0,
+        "max": 100,
+        "default": 20,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding Bottom",
+        "min": 0,
+        "max": 100,
+        "default": 20,
+        "unit": "px"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Text Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+          },
+          {
+            "type": "range",
+            "id": "font_size",
+            "label": "Font Size",
+            "min": 12,
+            "max": 48,
+            "default": 16,
+            "unit": "px"
+          },
+          {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color",
+            "default": "#ff0000"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image with Text Custom",
+        "category": "Custom Sections"
+      }
+    ]
+  }
 }
