@@ -82,5 +82,8 @@
         "category": "Custom Sections"
       }
     ]
-  }
+  },
+  "order": [
+    "main"
+  ]
 }
