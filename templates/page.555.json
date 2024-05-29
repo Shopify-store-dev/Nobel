@@ -1,0 +1,9 @@
+{
+  "name": "555 custom",
+  "sections": {
+    "template_555": {
+      "type": "555-custom"
+    }
+  },
+  "order": ["template_555"]
+}
