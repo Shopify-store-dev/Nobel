@@ -1,0 +1,10 @@
+node_modules/
+tmp/
+*.log
+config/settings_data.json
+dist/
+.idea/
+.vscode/
+tailwind.css
+package-lock.json
+package.json
