@@ -1,9 +1,13 @@
 {
   "name": "555 custom",
   "sections": {
-    "template_555": {
-      "type": "555-custom"
+    "template_page_img-text": {
+      "type": "555-custom",
+      "settings": {
+        "pretitle": "Our mission",
+        "title": "The car like a second home"
+      }
     }
   },
-  "order": ["template_555"]
+  "order": ["template_page_img-text"]
 }

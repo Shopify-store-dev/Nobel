@@ -1,20 +1,23 @@
-<h1 class="text-3xl font-bold underline">{{ section.settings.title }}</h1>
-<h2>{{ section.settings.subtitle }}</h2>
+<div class="flex-col">
+  <h3> {{ section.settings.pretitle }}</h3>
+  <h1> {{ section.settings.title }}</h1>
+</div>
+
 
 {% schema %}
-{
-  "name": "555 test",
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "tittle 555"
-    },
-    {
-      "type": "text",
-      "id": "subtitle",
-      "label": "subtittle 555"
-    }
-  ]
-}
+  {
+    "name": "555 test",
+    "settings": [
+      {
+        "type": "text",
+        "id": "pretitle",
+        "label": "pretitle"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "title"
+      }
+    ]
+  }
 {% endschema %}
