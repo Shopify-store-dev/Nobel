@@ -1,6 +1,6 @@
 {
   "sections": {
-    "main": {
+    "about-us": {
       "type": "about-us",
       "custom_css": [
         "h1 {font-size: 20px;}"
@@ -10,6 +10,6 @@
     }
   },
   "order": [
-    "main"
+    "about-us"
   ]
 }
