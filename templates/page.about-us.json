@@ -1,14 +1,22 @@
 {
   "sections": {
-    "main": {
+    "main_baner": {
       "type": "about-us",
       "settings": {
         "padding_top": 28,
-        "padding_bottom": 28
+        "padding_bottom": 28,
+        "title": "Elevate Your Drive in Comfort and Style",
+        "span-title": "Luxury accessorize for your car",
+        "title-h2": "The car is like a second home",
+        "describe-main-baner": "Drive into excellence with NOBEL CAR. Explore our premium car accessories – from luxe interior care to smart organizers and refreshing air fresheners. Elevate your journey today.",
+        "image": "https://cdn.shopify.com/s/files/1/0658/6073/1049/files/bg_about_us.png?v=1716459038",
+        "width": "100%",
+        "height": "auto",
+        "btn_link": "/collections/all"
       }
     }
   },
   "order": [
-    "main"
+    "main_baner"
   ]
 }

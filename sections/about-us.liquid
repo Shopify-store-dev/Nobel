@@ -1,25 +1,93 @@
-<section class="bg-red-900">
+{{'about-us.css' |  asset_url |  stylesheet_tag}}
+
+<section class="main-section">
   <h1>{{section.settings.pretitle}}</h1>
-  <h1>{{section.settings.pretitle}}</h1>
-  <h1>{{section.settings.pretitle}}</h1>
-  <p> testtest</p>
+
+  <img 
+    class="main-baner"
+    src="{{ section.settings.image | image_url }}" 
+    alt="main banner"
+    width="{{ section.settings.width }}"
+    height="{{ section.settings.height }}"
+  >
+
+  <div class="main-baner-text-container">
+    <h1 class="title-h1">{{ section.settings.title }}</h1>
+    <h5 class="span-title">{{ section.settings.span-title }}</h5>
+
+    <a href="{{section.settings.btn_link | default: routes.all_collections_url}}" class="btn_start_shop">{{ section.settings.btn_start_shop }}</a>
+
+    <h2>{{ section.settings.title-h2 }}</h2>
+  </div>
 </section>
 
 
 {% schema %}
 {
-  "name": "About US",
+  "name": "Main Banner",
   "settings": [
     {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Main Banner Image"
+    },
+    {
       "type": "text",
-      "label": "input pretitle",
-      "id": "pretitle"
+      "id": "title",
+      "label": "Banner Title",
+      "default": "Elevate Your Drive in Comfort and Style"
+    },
+    {
+      "type": "text",
+      "id": "span-title",
+      "label": "span Title"
+    },
+    {
+      "type": "text",
+      "id": "btn_start_shop",
+      "label": "button",
+      "default": "START SHOPPING"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "url button"
+    },
+    {
+      "type": "text",
+      "id": "title-h2",
+      "label": "h2 Title"
+    },
+    {
+      "type": "text",
+      "id": "width",
+      "label": "Image Width",
+      "default": "100%"
+    },
+    {
+      "type": "text",
+      "id": "height",
+      "label": "Image Height",
+      "default": "auto"
+    },
+    {
+      "type": "number",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "default": 28
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "default": 28
     }
   ],
   "presets": [
-  {
-    "name": "page About US"
-  }
-]
+    {
+      "name": "Main Banner",
+      "category": "Banners"
+    }
+  ]
 }
 {% endschema %}

@@ -1,0 +1,28 @@
+# OS generated files #
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Enviroment files #
+source
+build_tools
+node_modules
+.config
+.github
+.vscode
+.docs
+src/public/*.json
+package.json
+.gitignore
+gulpfile.js
+
+# Other files #
+/\.(txt|md|lock)$/
+
+tailwind.css
+tailwind.config.js
+package.json
+src
