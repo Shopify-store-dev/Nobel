@@ -2,56 +2,166 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding-top: 28px;
-  padding-bottom: 28px;
+}
+
+.image-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .main-baner {
   width: 100%;
-  height: auto;
+  height: 700px;
+  object-fit: contain;
 }
 
 .main-baner-text-container {
   position: absolute;
-  top: 200px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 400px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  padding: 0 50px;
 }
 
 .title-h1 {
-  font-size: 80px;
+  font-size: 48px;
   font-weight: bold;
-  line-height: 120px;
-  width: 750px;
+  width: 1077px;
   margin-bottom: 23px;
 }
 
 .span-title {
   font-size: 16px;
-  margin-bottom: 62px;
+  margin-bottom: 15px;
 }
 
-.btn_start_shop {
-  width: 223px;
-  height: 51px;
-  background-color: #2FA3F9;
-  font-size: 16px;
+.two-section {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  border: none;
-  cursor: pointer;
-  text-decoration:none;
-  border-radius: 3px;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 50px;
 }
 
-.title-h2 {
+.two-container {
+  float: inline-end;
+  margin-top: 200px;
+}
+
+.two-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.title-h3-span {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #2FA3F9;
+}
+
+.title-h3 {
   font-size: 32px;
-  margin-top: 20px; 
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.two-text--p {
+  margin-bottom: 15px;
+}
+
+@media (max-width: 1024px) {
+  .main-baner-text-container {
+    top: 500px;
+    padding: 0 20px;
+  }
+
+  .title-h1 {
+    font-size: 36px;
+    width: auto;
+    margin-bottom: 20px;
+  }
+
+  .span-title {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .two-section {
+    flex-direction: column;
+  }
+
+  .two-container {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .two-text-container {
+    max-width: 100%;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-baner-text-container {
+    top: 400px;
+    padding: 0 10px;
+  }
+
+  .title-h1 {
+    font-size: 24px;
+    width: auto;
+    margin-bottom: 15px;
+  }
+
+  .span-title {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .two-section {
+    flex-direction: column;
+  }
+
+  .two-container {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .two-text-container {
+    max-width: 100%;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-baner-text-container {
+    top: 300px;
+    padding: 0 5px;
+  }
+
+  .title-h1 {
+    font-size: 18px;
+    width: auto;
+    margin-bottom: 10px;
+  }
+
+  .span-title {
+    font-size: 10px;
+    margin-bottom: 5px;
+  }
+
+  .two-section {
+    flex-direction: column;
+  }
+
+  .two-container {
+    margin-left: 0;
+    margin-bottom: 20px; /* Відступ знизу для зображення на малих екранах */
+  }
+
+  .two-text-container {
+    max-width: 100%;
+    padding-right: 0;
+  }
 }

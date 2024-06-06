@@ -1,93 +1,127 @@
-{{'about-us.css' |  asset_url |  stylesheet_tag}}
+{{ 'about-us.css' | asset_url | stylesheet_tag }}
 
 <section class="main-section">
-  <h1>{{section.settings.pretitle}}</h1>
+  <h1>{{ section.settings.pretitle }}</h1>
 
-  <img 
-    class="main-baner"
-    src="{{ section.settings.image | image_url }}" 
-    alt="main banner"
-    width="{{ section.settings.width }}"
-    height="{{ section.settings.height }}"
-  >
+  <div class="image-container">
+    <img
+      class="main-baner"
+      src="{{ section.settings.image_main | image_url }}"
+      alt="main banner"
+      width="{{ section.settings.width }}"
+      height="{{ section.settings.height }}">
+  </div>
 
   <div class="main-baner-text-container">
+    <span class="span-title">{{ section.settings.span-title }}</span>
     <h1 class="title-h1">{{ section.settings.title }}</h1>
-    <h5 class="span-title">{{ section.settings.span-title }}</h5>
-
-    <a href="{{section.settings.btn_link | default: routes.all_collections_url}}" class="btn_start_shop">{{ section.settings.btn_start_shop }}</a>
-
-    <h2>{{ section.settings.title-h2 }}</h2>
   </div>
 </section>
 
+<section class="two-section">
+  <div class="two-text-container">
+    <span class="title-h3-span">{{ section.settings.title_h3_span }}</span>
+    <h3 class="title-h3">{{ section.settings.title_h3 }}
+      <span>NobelCar</span>
+    </h3>
+    <p class="two-text--p">The inspiration for NobelCar came during a family road trip when we realized how much time we spend in our cars. Despite having a reliable vehicle, we noticed that the interior lacked the comfort and convenience we desired for our long journeys.
+    </p>
+
+    <p class="two-text--p">
+      This sparked an idea: what if we could transform car interiors to feel like a second home? We began researching and testing various accessories, from seat covers to vacuum cleaners, aiming to enhance the driving experience.
+    </p>
+
+    <p class="two-text--p">
+      After months of hard work and dedication, NobelCar was born, with a mission to make every car ride a comfortable and enjoyable adventure.
+    </p>
+  </div>
+
+  <div class="two-container">
+    <img
+      src="{{ section.settings.image_two | image_url }}"
+      alt="Two Section Image"
+      class="two-image"
+      width="{{ section.settings.img_two_width }}"
+      height="{{ section.settings.img_two_height }}">
+  </div>
+</section>
 
 {% schema %}
-{
-  "name": "Main Banner",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Main Banner Image"
-    },
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Banner Title",
-      "default": "Elevate Your Drive in Comfort and Style"
-    },
-    {
-      "type": "text",
-      "id": "span-title",
-      "label": "span Title"
-    },
-    {
-      "type": "text",
-      "id": "btn_start_shop",
-      "label": "button",
-      "default": "START SHOPPING"
-    },
-    {
-      "type": "url",
-      "id": "btn_link",
-      "label": "url button"
-    },
-    {
-      "type": "text",
-      "id": "title-h2",
-      "label": "h2 Title"
-    },
-    {
-      "type": "text",
-      "id": "width",
-      "label": "Image Width",
-      "default": "100%"
-    },
-    {
-      "type": "text",
-      "id": "height",
-      "label": "Image Height",
-      "default": "auto"
-    },
-    {
-      "type": "number",
-      "id": "padding_top",
-      "label": "Padding Top",
-      "default": 28
-    },
-    {
-      "type": "number",
-      "id": "padding_bottom",
-      "label": "Padding Bottom",
-      "default": 28
-    }
-  ],
-  "presets": [
-    {
-      "name": "Main Banner",
-      "category": "Banners"
-    }
-  ]
-}
+  {
+    "name": "ABOUT US",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_main",
+        "label": "Main Banner Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Banner Title",
+        "default": "Elevate Your Drive in Comfort and Style"
+      },
+      {
+        "type": "text",
+        "id": "span-title",
+        "label": "Span Title"
+      },
+      {
+        "type": "text",
+        "id": "width",
+        "label": "Image Width",
+        "default": "100%"
+      },
+      {
+        "type": "text",
+        "id": "height",
+        "label": "Image Height",
+        "default": "auto"
+      },
+      {
+        "type": "number",
+        "id": "padding_top",
+        "label": "Padding Top"
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom",
+        "label": "Padding Bottom",
+        "default": 28
+      },
+      {
+        "type": "text",
+        "id": "title_h3_span",
+        "label": "Two Section Span Title"
+      },
+      {
+        "type": "text",
+        "id": "title_h3",
+        "label": "Two Section Title"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_two",
+        "label": "Two Section Image"
+      },
+      {
+        "type": "text",
+        "id": "img_two_width",
+        "label": "Two Section Image Width",
+        "default": "600"
+      },
+      {
+        "type": "text",
+        "id": "img_two_height",
+        "label": "Two Section Image Height",
+        "default": "auto"
+      }
+    ],
+    "presets": [
+      {
+        "name": "ABOUT US",
+        "category": "Banners"
+      }
+    ]
+  }
 {% endschema %}
