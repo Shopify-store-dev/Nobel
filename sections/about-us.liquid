@@ -19,8 +19,6 @@
 </section>
 
 <section class="two-section">
-  
-
   <span class="two-h2-span">{{ section.settings.two_title_h2_span }}</span>
   <h3 class="two-title-h2">{{ section.settings.two_title_h2 }}
     <span>NobelCar</span>
@@ -70,6 +68,7 @@
     </p>
   </div>
 </section>
+
 {% schema %}
   {
     "name": "ABOUT US",
@@ -124,7 +123,7 @@
         "type": "image_picker",
         "id": "two_image",
         "label": "Two Section Image",
-        "default": "https://cdn.shopify.com/s/files/1/0658/6073/1049/files/pic2.png?v=1716459037"
+        "default": "./assets/pic2.png"
       }, {
         "type": "text",
         "id": "img_two_height",
@@ -148,7 +147,8 @@
       }, {
         "type": "image_picker",
         "id": "three_image",
-        "label": "Three Section Image"
+        "label": "Three Section Image",
+        "default": "./assets/pic3.png"
       }, {
         "type": "text",
         "id": "img_three_height",
