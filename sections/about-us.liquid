@@ -19,33 +19,57 @@
 </section>
 
 <section class="two-section">
-  <div class="two-text-container">
-    <span class="title-h3-span">{{ section.settings.title_h3_span }}</span>
-    <h3 class="title-h3">{{ section.settings.title_h3 }}
-      <span>NobelCar</span>
-    </h3>
-    <p class="two-text--p">The inspiration for NobelCar came during a family road trip when we realized how much time we spend in our cars. Despite having a reliable vehicle, we noticed that the interior lacked the comfort and convenience we desired for our long journeys.
+  
+
+  <span class="two-h2-span">{{ section.settings.two_title_h2_span }}</span>
+  <h3 class="two-title-h2">{{ section.settings.two_title_h2 }}
+    <span>NobelCar</span>
+  </h3>
+  <p class="two-text-p two-text--width">The inspiration for NobelCar came during a family road trip when we realized how much time we spend in our cars. Despite having a reliable vehicle, we noticed that the interior lacked the comfort and convenience we desired for our long journeys.
+  </p>
+
+   <div>
+    <img
+      src="{{ section.settings.two_image | image_url }}"
+      alt="Two Section Image"
+      class="two_image"
+      width="{{ section.settings.img_two_width }}"
+      height="{{ section.settings.img_two_height }}"> 
+
+  <p class="two-text-p">
+    This sparked an idea: what if we could transform car interiors to feel like a second home? We began researching and testing various accessories, from seat covers to vacuum cleaners, aiming to enhance the driving experience.
+  </p>
+   </div>
+
+  <p class="two-text-p two-text--width">
+    After months of hard work and dedication, NobelCar was born, with a mission to make every car ride a comfortable and enjoyable adventure.
+  </p>
+</section>
+
+<section class="three-section">
+  <img
+    src="{{ section.settings.three_image | image_url }}"
+    alt="Three Section Image"
+    class="three_image"
+    width="{{ section.settings.img_three_width }}"
+    height="{{ section.settings.img_three_height }}">
+
+  <div class="three-text-container">
+    <span class="three-h2-span">{{ section.settings.three_title_h2_span }}</span>
+    <h2 class="three-title-h2">{{ section.settings.three_title_h2 }}</h2>
+
+    <p class="three-text-p three-text--width">Our mission at NobelCar is to transform your car into a maximally comfortable space for your entire family, including your beloved pets.
     </p>
 
-    <p class="two-text--p">
-      This sparked an idea: what if we could transform car interiors to feel like a second home? We began researching and testing various accessories, from seat covers to vacuum cleaners, aiming to enhance the driving experience.
+    <p class="three-text-p">
+      With our high-quality accessories designed for both everyday use and travel, we aim to enhance your driving experience and make every journey enjoyable for everyone on board.
     </p>
 
-    <p class="two-text--p">
+    <p class="three-text-p three-text--width">
       After months of hard work and dedication, NobelCar was born, with a mission to make every car ride a comfortable and enjoyable adventure.
     </p>
   </div>
-
-  <div class="two-container">
-    <img
-      src="{{ section.settings.image_two | image_url }}"
-      alt="Two Section Image"
-      class="two-image"
-      width="{{ section.settings.img_two_width }}"
-      height="{{ section.settings.img_two_height }}">
-  </div>
 </section>
-
 {% schema %}
   {
     "name": "ABOUT US",
@@ -53,7 +77,8 @@
       {
         "type": "image_picker",
         "id": "image_main",
-        "label": "Main Banner Image"
+        "label": "Main Banner Image",
+        "default": "https://cdn.shopify.com/s/files/1/0658/6073/1049/files/bg_about_us.png?v=1716459038"
       },
       {
         "type": "text",
@@ -71,49 +96,68 @@
         "id": "width",
         "label": "Image Width",
         "default": "100%"
-      },
-      {
+      }, {
         "type": "text",
         "id": "height",
         "label": "Image Height",
         "default": "auto"
-      },
-      {
+      }, {
         "type": "number",
         "id": "padding_top",
         "label": "Padding Top"
-      },
-      {
+      }, {
         "type": "number",
         "id": "padding_bottom",
         "label": "Padding Bottom",
         "default": 28
-      },
-      {
+      }, {
         "type": "text",
-        "id": "title_h3_span",
-        "label": "Two Section Span Title"
-      },
-      {
+        "id": "two_title_h2_span",
+        "label": "Two Section Span Title",
+        "default": "THE WHY"
+      }, {
         "type": "text",
-        "id": "title_h3",
-        "label": "Two Section Title"
-      },
-      {
+        "id": "two_title_h2",
+        "label": "Two Section Title",
+        "default": "The story of "
+      }, {
         "type": "image_picker",
-        "id": "image_two",
-        "label": "Two Section Image"
-      },
-      {
-        "type": "text",
-        "id": "img_two_width",
-        "label": "Two Section Image Width",
-        "default": "600"
-      },
-      {
+        "id": "two_image",
+        "label": "Two Section Image",
+        "default": "https://cdn.shopify.com/s/files/1/0658/6073/1049/files/pic2.png?v=1716459037"
+      }, {
         "type": "text",
         "id": "img_two_height",
         "label": "Two Section Image Height",
+        "default": "auto"
+      }, {
+        "type": "text",
+        "id": "img_two_width",
+        "label": "Two Section Image Width",
+        "default": "auto"
+      }, {
+        "type": "text",
+        "id": "three_title_h2_span",
+        "label": "Three Section Title",
+        "default": "OUR MISSION"
+      }, {
+        "type": "text",
+        "id": "three_title_h2",
+        "label": "Three Section Title",
+        "default": "The car like a second home"
+      }, {
+        "type": "image_picker",
+        "id": "three_image",
+        "label": "Three Section Image"
+      }, {
+        "type": "text",
+        "id": "img_three_height",
+        "label": "Three Section Image Height",
+        "default": "auto"
+      }, {
+        "type": "text",
+        "id": "img_three_width",
+        "label": "Three Section Image Width",
         "default": "auto"
       }
     ],

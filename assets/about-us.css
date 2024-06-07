@@ -36,40 +36,52 @@
   margin-bottom: 15px;
 }
 
-.two-section {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+.two-section, .three-section {
   padding: 0 50px;
-}
-
-.two-container {
-  float: inline-end;
-  margin-top: 200px;
+  overflow: hidden;
 }
 
 .two-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  float: right;
+  margin: 20px;
+  margin-top: 250px; /* Зміщення зображення вниз */
 }
 
-.title-h3-span {
+.two-text-p, .three-text-p {
+  margin-bottom: 15px;
+}
+
+.two-h2-span, .three-h2-span {
   font-size: 24px;
   margin-bottom: 10px;
   color: #2FA3F9;
 }
 
-.title-h3 {
+.two-title-h2, .three-title-h2 {
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-.two-text--p {
-  margin-bottom: 15px;
+.two-title-h2 span, .three-title-h2 span {
+  color: #2C98E7;
 }
 
+.two-text--width, .three-text--width {
+  width: 100%; /* Ширина текстового контейнера */
+  z-index: 2;
+}
+
+.three-text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.three-image {
+  float: left;
+}
+
+/* Media queries for responsive design */
 @media (max-width: 1024px) {
   .main-baner-text-container {
     top: 500px;
@@ -87,18 +99,19 @@
     margin-bottom: 10px;
   }
 
-  .two-section {
-    flex-direction: column;
+  .two-section, .three-section {
+    padding: 0 20px;
   }
 
-  .two-container {
-    margin-left: 0;
-    margin-bottom: 20px;
+  .two-image, .three-image {
+    float: none; /* Скасувати флоат для менших екранів */
+    width: 100%;
+    margin: 20px 0;
+    margin-top: 20px;
   }
 
-  .two-text-container {
+  .two-text--width, .three-text--width {
     max-width: 100%;
-    padding-right: 0;
   }
 }
 
@@ -119,18 +132,19 @@
     margin-bottom: 8px;
   }
 
-  .two-section {
-    flex-direction: column;
+  .two-section, .three-section {
+    padding: 0 10px;
   }
 
-  .two-container {
-    margin-left: 0;
-    margin-bottom: 20px;
+  .two-image, .three-image {
+    float: none; /* Скасувати флоат для менших екранів */
+    width: 100%;
+    margin: 20px 0;
+    margin-top: 20px;
   }
 
-  .two-text-container {
+  .two-text--width, .three-text--width {
     max-width: 100%;
-    padding-right: 0;
   }
 }
 
@@ -151,17 +165,18 @@
     margin-bottom: 5px;
   }
 
-  .two-section {
-    flex-direction: column;
+  .two-section, .three-section {
+    padding: 0 5px;
   }
 
-  .two-container {
-    margin-left: 0;
-    margin-bottom: 20px; /* Відступ знизу для зображення на малих екранах */
+  .two-image, .three-image {
+    float: none; /* Скасувати флоат для менших екранів */
+    width: 100%;
+    margin: 20px 0; /* Відступ знизу для зображення на малих екранах */
+    margin-top: 20px;
   }
 
-  .two-text-container {
+  .two-text--width, .three-text--width {
     max-width: 100%;
-    padding-right: 0;
   }
 }
