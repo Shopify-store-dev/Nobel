@@ -1,170 +1,154 @@
 {{ 'about-us.css' | asset_url | stylesheet_tag }}
 
-<section class="main-section">
-  <h1>{{ section.settings.pretitle }}</h1>
+<div class="body-page">
+  <section class="main-section">
+    <div class="main-setion__text-container">
+      <small class="main-section__pretitle text-white">{{ section.blocks[0].settings.pretitle }}</small>
+      <h1 class="main-section__title text-white">{{ section.blocks[0].settings.title }}</h1>
+    </div>
 
-  <div class="image-container">
-    <img
-      class="main-baner"
-      src="{{ section.settings.image_main | image_url }}"
-      alt="main banner"
-      width="{{ section.settings.width }}"
-      height="{{ section.settings.height }}">
-  </div>
+    <div class="main-section__image-container">
+      <img
+        src="{{ section.blocks[0].settings.image_main | image_url: width: 300 }}"
+        alt="main banner"
+        srcset="
+          {{ section.blocks[0].settings.image_main | image_url: width: 300 }} 300w,
+          {{ section.blocks[0].settings.image_main | image_url: width: 600 }} 600w,
+          {{ section.blocks[0].settings.image_main | image_url: width: 1200 }} 1200w
+        "
+        sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 100vw"
+        width="100%"
+        height="auto">
+    </div>
 
-  <div class="main-baner-text-container">
-    <span class="span-title">{{ section.settings.span-title }}</span>
-    <h1 class="title-h1">{{ section.settings.title }}</h1>
-  </div>
-</section>
+    <div class="main-baner-text-container">
+      <span class="span-title text-color">{{ section.settings.span-title }}</span>
+      <h1 class="title-h1 text-color">{{ section.settings.title }}</h1>
+    </div>
+  </section>
 
-<section class="two-section">
-  <span class="two-h2-span">{{ section.settings.two_title_h2_span }}</span>
-  <h3 class="two-title-h2">{{ section.settings.two_title_h2 }}
-    <span>NobelCar</span>
-  </h3>
-  <p class="two-text-p two-text--width">The inspiration for NobelCar came during a family road trip when we realized how much time we spend in our cars. Despite having a reliable vehicle, we noticed that the interior lacked the comfort and convenience we desired for our long journeys.
-  </p>
+  <section class="two-section">
+      <div class="two-section__title-container">
+        <small class="two-section__pretitle text-gray">{{ section.blocks[1].settings.two-section__pretitle }}</small>
+        <h2 class="two-section__title text-white">{{ section.blocks[1].settings.two-section__title }}
+          <span>NobelCar</span>
+        </h2>
+      </div>
 
-   <div>
-    <img
-      src="{{ section.settings.two_image | image_url }}"
-      alt="Two Section Image"
-      class="two_image"
-      width="{{ section.settings.img_two_width }}"
-      height="{{ section.settings.img_two_height }}"> 
+    <p class="two-text__one-p text-white text-size_20">
+        The inspiration for NobelCar came during a family road trip when we realized how much time we spend in our cars. Despite having a reliable vehicle, we noticed that the interior lacked the comfort and convenience we desired for our long journeys.
+      </p>
 
-  <p class="two-text-p">
-    This sparked an idea: what if we could transform car interiors to feel like a second home? We began researching and testing various accessories, from seat covers to vacuum cleaners, aiming to enhance the driving experience.
-  </p>
-   </div>
+      <p class="two-text__two-p text-white text-size_20">
+        This sparked an idea: what if we could transform car interiors to feel like a second home? We began researching and testing various accessories, from seat covers to vacuum cleaners, aiming to enhance the driving experience.
+      </p>
 
-  <p class="two-text-p two-text--width">
-    After months of hard work and dedication, NobelCar was born, with a mission to make every car ride a comfortable and enjoyable adventure.
-  </p>
-</section>
+      <p class="two-text__three-p text-white text-size_20">
+        After months of hard work and dedication, NobelCar was born, with a mission to make every car ride a comfortable and enjoyable adventure.
+      </p>
 
-<section class="three-section">
-  <img
-    src="{{ section.settings.three_image | image_url }}"
-    alt="Three Section Image"
-    class="three_image"
-    width="{{ section.settings.img_three_width }}"
-    height="{{ section.settings.img_three_height }}">
+    <div class="two-section__image-container">
+      <img
+        src="{{ section.blocks[1].settings.two_image | image_url }}"
+        alt="Two Section Image"
+        class="two_image"
+        width="{{ section.blocks[1].settings.width }}"
+        height="{{ section.blocks[1].settings.height }}">
+    </div>
+  </section>
 
-  <div class="three-text-container">
-    <span class="three-h2-span">{{ section.settings.three_title_h2_span }}</span>
-    <h2 class="three-title-h2">{{ section.settings.three_title_h2 }}</h2>
-
-    <p class="three-text-p three-text--width">Our mission at NobelCar is to transform your car into a maximally comfortable space for your entire family, including your beloved pets.
-    </p>
-
-    <p class="three-text-p">
-      With our high-quality accessories designed for both everyday use and travel, we aim to enhance your driving experience and make every journey enjoyable for everyone on board.
-    </p>
-
-    <p class="three-text-p three-text--width">
-      After months of hard work and dedication, NobelCar was born, with a mission to make every car ride a comfortable and enjoyable adventure.
-    </p>
-  </div>
-</section>
+</div>
 
 {% schema %}
   {
     "name": "ABOUT US",
-    "settings": [
+    "blocks": [
       {
-        "type": "image_picker",
-        "id": "image_main",
-        "label": "Main Banner Image",
-        "default": "https://cdn.shopify.com/s/files/1/0658/6073/1049/files/bg_about_us.png?v=1716459038"
-      },
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Banner Title",
-        "default": "Elevate Your Drive in Comfort and Style"
-      },
-      {
-        "type": "text",
-        "id": "span-title",
-        "label": "Span Title"
-      },
-      {
-        "type": "text",
-        "id": "width",
-        "label": "Image Width",
-        "default": "100%"
+        "type": "main-section",
+        "name": "One section",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_main",
+            "label": "Main Banner Image"
+          },
+          {
+            "type": "text",
+            "id": "one_width",
+            "label": "Width one section",
+            "default": "100"
+          },
+          {
+            "type": "text",
+            "id": "one_height",
+            "label": "Height one section",
+            "default": "auto"
+          },
+          {
+            "type": "text",
+            "id": "pretitle",
+            "label": "Pretitle"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Banner main Title",
+            "default": "Elevate Your Drive in Comfort and Style"
+          }, {
+            "type": "text",
+            "id": "width",
+            "label": "Image Width",
+            "default": "100%"
+          }, {
+            "type": "text",
+            "id": "height",
+            "label": "Image Height",
+            "default": "auto"
+          }
+        ]
       }, {
-        "type": "text",
-        "id": "height",
-        "label": "Image Height",
-        "default": "auto"
-      }, {
-        "type": "number",
-        "id": "padding_top",
-        "label": "Padding Top"
-      }, {
-        "type": "number",
-        "id": "padding_bottom",
-        "label": "Padding Bottom",
-        "default": 28
-      }, {
-        "type": "text",
-        "id": "two_title_h2_span",
-        "label": "Two Section Span Title",
-        "default": "THE WHY"
-      }, {
-        "type": "text",
-        "id": "two_title_h2",
-        "label": "Two Section Title",
-        "default": "The story of "
-      }, {
-        "type": "image_picker",
-        "id": "two_image",
-        "label": "Two Section Image",
-        "default": "./assets/pic2.png"
-      }, {
-        "type": "text",
-        "id": "img_two_height",
-        "label": "Two Section Image Height",
-        "default": "auto"
-      }, {
-        "type": "text",
-        "id": "img_two_width",
-        "label": "Two Section Image Width",
-        "default": "auto"
-      }, {
-        "type": "text",
-        "id": "three_title_h2_span",
-        "label": "Three Section Title",
-        "default": "OUR MISSION"
-      }, {
-        "type": "text",
-        "id": "three_title_h2",
-        "label": "Three Section Title",
-        "default": "The car like a second home"
-      }, {
-        "type": "image_picker",
-        "id": "three_image",
-        "label": "Three Section Image",
-        "default": "./assets/pic3.png"
-      }, {
-        "type": "text",
-        "id": "img_three_height",
-        "label": "Three Section Image Height",
-        "default": "auto"
-      }, {
-        "type": "text",
-        "id": "img_three_width",
-        "label": "Three Section Image Width",
-        "default": "auto"
+        "type": "two-section",
+        "name": "Two section",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "two_image",
+            "label": "Two image"
+          },
+          {
+            "type": "text",
+            "id": "width",
+            "label": "Width one section",
+            "default": "100%"
+          },
+          {
+            "type": "text",
+            "id": "height",
+            "label": "Height one section",
+            "default": "auto%"
+          },
+          {
+            "type": "text",
+            "id": "two-section__pretitle",
+            "label": "two section pre title"
+          }, {
+            "type": "text",
+            "id": "two-section__title",
+            "label": "two section title"
+          }
+        ]
       }
     ],
     "presets": [
       {
         "name": "ABOUT US",
-        "category": "Banners"
+        "category": "Custom Sections",
+        "blocks": [
+          {
+            "type": "main-section"
+          }, {
+            "type": "two-section"
+          }
+        ]
       }
     ]
   }

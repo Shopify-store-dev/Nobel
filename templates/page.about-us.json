@@ -2,18 +2,35 @@
   "sections": {
     "main_baner": {
       "type": "about-us",
+      "blocks": {
+        "main_section_Jp49N9": {
+          "type": "main-section",
+          "settings": {
+            "image_main": "shopify:\/\/shop_images\/bg_about_us.png",
+            "one_width": "100",
+            "one_height": "auto",
+            "pretitle": "About Nobelcar Shop",
+            "title": "Your car is not just a means of transportation",
+            "width": "100%",
+            "height": "auto"
+          }
+        },
+        "two_section_4EacQk": {
+          "type": "two-section",
+          "settings": {
+            "two_image": "shopify:\/\/shop_images\/pic2.png",
+            "width": "100%",
+            "height": "auto%",
+            "two-section__pretitle": "THE WHY",
+            "two-section__title": "The story of"
+          }
+        }
+      },
+      "block_order": [
+        "main_section_Jp49N9",
+        "two_section_4EacQk"
+      ],
       "settings": {
-        "image_main": "shopify:\/\/shop_images\/bg_about_us.png",
-        "title": "Elevate Your Drive in Comfort and Style",
-        "span-title": "",
-        "width": "100%",
-        "height": "auto",
-        "padding_bottom": 28,
-        "title_h3_span": "THE WHY",
-        "title_h3": "The story of",
-        "image_two": "shopify:\/\/shop_images\/pic2.png",
-        "img_two_width": "600",
-        "img_two_height": "auto"
       }
     }
   },

@@ -1,13 +1,27 @@
+.body-page {
+  background: #14141a;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+}
+
+.text-size_20 {
+  font-size: 20px;
+}
+
+.text-white {
+  color: #fff;
+}
+
 .main-section {
   position: relative;
   display: flex;
   flex-direction: column;
+  color: #fff;
 }
 
-.image-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+.main-section__image-container {
+  width: 100%;
 }
 
 .main-baner {
@@ -16,167 +30,109 @@
   object-fit: contain;
 }
 
-.main-baner-text-container {
+.main-setion__text-container {
   position: absolute;
-  top: 400px;
+  top: calc(100vh - 28%);
   display: flex;
   flex-direction: column;
   padding: 0 50px;
+  color: #fff;
+  width: 50%;
 }
 
-.title-h1 {
+.main-section__title {
   font-size: 48px;
   font-weight: bold;
-  width: 1077px;
-  margin-bottom: 23px;
+  margin-top: 0;
 }
 
-.span-title {
+.main-section__pretitle {
   font-size: 16px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-.two-section, .three-section {
+.two-section,
+.three-section {
   padding: 0 50px;
   overflow: hidden;
 }
 
-.two-image {
-  float: right;
-  margin: 20px;
-  margin-top: 250px; /* Зміщення зображення вниз */
+.two-section {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
 }
 
-.two-text-p, .three-text-p {
-  margin-bottom: 15px;
+.two-section__text-container {
+  margin: 0;
+  grid-column: 1 / 6;
+  grid-row: 1;
+  margin-top: 120px;
 }
 
-.two-h2-span, .three-h2-span {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #2FA3F9;
+.two-text__one-p {
+  grid-column: 1 / 6;
 }
 
-.two-title-h2, .three-title-h2 {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.two-title-h2 span, .three-title-h2 span {
-  color: #2C98E7;
-}
-
-.two-text--width, .three-text--width {
-  width: 100%; /* Ширина текстового контейнера */
+.two-section__title-container {
+  margin: 0;
+  grid-column: 1 / 6;
+  grid-row: 2;
   z-index: 2;
 }
 
-.three-text-container {
-  display: flex;
-  flex-direction: column;
+.two-section__title {
+  font-size: 48px;
+  margin: 0;
 }
 
-.three-image {
-  float: left;
+.two-section__title span {
+  color: #2fa3f9;
+}
+
+.two-text__one-p {
+  margin: 0;
+  grid-column: 1 / 6;
+  grid-row: 3 / 5;
+  z-index: 2;
+}
+
+.two-text__two-p {
+  grid-column: 1 / 6;
+  grid-row: 5 / 6;
+  z-index: 2;
+}
+
+.two-text__three-p {
+  grid-column: 1 / 8;
+  grid-row: 6;
+  z-index: 2;
+}
+
+.two-section__image-container {
+  grid-column: 4 / 13;
+  grid-row: 1 / 6;
+  margin-top: 76px;
+}
+
+.two-section__pretitle {
+  margin-top: 120px;
+  font-size: 28px;
+}
+
+.text-gray {
+  color: #666C7B;
 }
 
 /* Media queries for responsive design */
 @media (max-width: 1024px) {
-  .main-baner-text-container {
-    top: 500px;
-    padding: 0 20px;
-  }
-
-  .title-h1 {
-    font-size: 36px;
-    width: auto;
-    margin-bottom: 20px;
-  }
-
-  .span-title {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-
-  .two-section, .three-section {
-    padding: 0 20px;
-  }
-
-  .two-image, .three-image {
-    float: none; /* Скасувати флоат для менших екранів */
-    width: 100%;
-    margin: 20px 0;
-    margin-top: 20px;
-  }
-
-  .two-text--width, .three-text--width {
-    max-width: 100%;
-  }
+  
 }
 
 @media (max-width: 768px) {
-  .main-baner-text-container {
-    top: 400px;
-    padding: 0 10px;
-  }
 
-  .title-h1 {
-    font-size: 24px;
-    width: auto;
-    margin-bottom: 15px;
-  }
-
-  .span-title {
-    font-size: 12px;
-    margin-bottom: 8px;
-  }
-
-  .two-section, .three-section {
-    padding: 0 10px;
-  }
-
-  .two-image, .three-image {
-    float: none; /* Скасувати флоат для менших екранів */
-    width: 100%;
-    margin: 20px 0;
-    margin-top: 20px;
-  }
-
-  .two-text--width, .three-text--width {
-    max-width: 100%;
-  }
 }
 
 @media (max-width: 480px) {
-  .main-baner-text-container {
-    top: 300px;
-    padding: 0 5px;
-  }
 
-  .title-h1 {
-    font-size: 18px;
-    width: auto;
-    margin-bottom: 10px;
-  }
-
-  .span-title {
-    font-size: 10px;
-    margin-bottom: 5px;
-  }
-
-  .two-section, .three-section {
-    padding: 0 5px;
-  }
-
-  .two-image, .three-image {
-    float: none; /* Скасувати флоат для менших екранів */
-    width: 100%;
-    margin: 20px 0; /* Відступ знизу для зображення на малих екранах */
-    margin-top: 20px;
-  }
-
-  .two-text--width, .three-text--width {
-    max-width: 100%;
-  }
 }
