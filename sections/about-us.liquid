@@ -1,51 +1,40 @@
 {{ 'about-us.css' | asset_url | stylesheet_tag }}
 
 <div class="body-page">
+  <div class="main-section__image-container">
+      <img
+        src="{{ section.blocks[0].settings.image | image_url}}"
+        alt="main banner"
+        width="{{ section.blocks[0].settings.width }}"
+        height="{{ section.blocks[0].settings.height }}">
+    </div>
+
   <section class="main-section">
     <div class="main-setion__text-container">
       <small class="main-section__pretitle text-white">{{ section.blocks[0].settings.pretitle }}</small>
       <h1 class="main-section__title text-white">{{ section.blocks[0].settings.title }}</h1>
-    </div>
-
-    <div class="main-section__image-container">
-      <img
-        src="{{ section.blocks[0].settings.image_main | image_url: width: 300 }}"
-        alt="main banner"
-        srcset="
-          {{ section.blocks[0].settings.image_main | image_url: width: 300 }} 300w,
-          {{ section.blocks[0].settings.image_main | image_url: width: 600 }} 600w,
-          {{ section.blocks[0].settings.image_main | image_url: width: 1200 }} 1200w
-        "
-        sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 100vw"
-        width="100%"
-        height="auto">
-    </div>
-
-    <div class="main-baner-text-container">
-      <span class="span-title text-color">{{ section.settings.span-title }}</span>
-      <h1 class="title-h1 text-color">{{ section.settings.title }}</h1>
-    </div>
+    </div>    
   </section>
 
   <section class="two-section">
-      <div class="two-section__title-container">
-        <small class="two-section__pretitle text-gray">{{ section.blocks[1].settings.two-section__pretitle }}</small>
-        <h2 class="two-section__title text-white">{{ section.blocks[1].settings.two-section__title }}
-          <span>NobelCar</span>
-        </h2>
-      </div>
+    <div class="two-section__title-container">
+      <small class="two-section__pretitle text-gray">{{ section.blocks[1].settings.two-section__pretitle }}</small>
+      <h2 class="two-section__title text-white">{{ section.blocks[1].settings.two-section__title }}
+        <span class="two-section__span">NobelCar</span>
+      </h2>
+    </div>
 
     <p class="two-text__one-p text-white text-size_20">
-        The inspiration for NobelCar came during a family road trip when we realized how much time we spend in our cars. Despite having a reliable vehicle, we noticed that the interior lacked the comfort and convenience we desired for our long journeys.
-      </p>
+      The inspiration for NobelCar came during a family road trip when we realized how much time we spend in our cars. Despite having a reliable vehicle, we noticed that the interior lacked the comfort and convenience we desired for our long journeys.
+    </p>
 
-      <p class="two-text__two-p text-white text-size_20">
-        This sparked an idea: what if we could transform car interiors to feel like a second home? We began researching and testing various accessories, from seat covers to vacuum cleaners, aiming to enhance the driving experience.
-      </p>
+    <p class="two-text__two-p text-white text-size_20">
+      This sparked an idea: what if we could transform car interiors to feel like a second home? We began researching and testing various accessories, from seat covers to vacuum cleaners, aiming to enhance the driving experience.
+    </p>
 
-      <p class="two-text__three-p text-white text-size_20">
-        After months of hard work and dedication, NobelCar was born, with a mission to make every car ride a comfortable and enjoyable adventure.
-      </p>
+    <p class="two-text__three-p text-white text-size_20">
+      After months of hard work and dedication, NobelCar was born, with a mission to make every car ride a comfortable and enjoyable adventure.
+    </p>
 
     <div class="two-section__image-container">
       <img
@@ -57,7 +46,25 @@
     </div>
   </section>
 
-</div>
+  <div class="three-section">
+    <div class="three-section__image-container">
+      <img
+        src="{{ section.blocks[2].settings.image | image_url }}"
+        alt="Three Section Image"
+        class="three_image"
+        width="{{ section.blocks[2].settings.width }}"
+        height="{{ section.blocks[2].settings.height }}">
+    </div> 
+
+    <div class="three-section__text-container">
+      <h2 class="three-section__pretitle text-gray">{{ section.blocks[2].settings.pretitle | upcase}}</h2>
+      <h2 class="three-section__title text-white">{{ section.blocks[2].settings.title }}
+        <span class="three-section__span">{{ section.blocks[2].settings.span }}</span>
+      </h2>
+      <p class="three-section__text text-white">Our mission at NobelCar is to transform your car into a maximally comfortable space for your entire family, including your beloved pets.</p>
+    </div>
+    </div>
+  </div>
 
 {% schema %}
   {
@@ -69,18 +76,18 @@
         "settings": [
           {
             "type": "image_picker",
-            "id": "image_main",
+            "id": "image",
             "label": "Main Banner Image"
           },
           {
             "type": "text",
-            "id": "one_width",
+            "id": "width",
             "label": "Width one section",
-            "default": "100"
+            "default": "130%"
           },
           {
             "type": "text",
-            "id": "one_height",
+            "id": "height",
             "label": "Height one section",
             "default": "auto"
           },
@@ -88,21 +95,12 @@
             "type": "text",
             "id": "pretitle",
             "label": "Pretitle"
-          }, {
+          }, 
+          {
             "type": "text",
             "id": "title",
             "label": "Banner main Title",
             "default": "Elevate Your Drive in Comfort and Style"
-          }, {
-            "type": "text",
-            "id": "width",
-            "label": "Image Width",
-            "default": "100%"
-          }, {
-            "type": "text",
-            "id": "height",
-            "label": "Image Height",
-            "default": "auto"
           }
         ]
       }, {
@@ -130,10 +128,53 @@
             "type": "text",
             "id": "two-section__pretitle",
             "label": "two section pre title"
-          }, {
+          }, 
+          {
             "type": "text",
             "id": "two-section__title",
             "label": "two section title"
+          }
+        ]
+      }, {
+        "type": "three-section",
+        "name": "Three section",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Three image"
+          },
+          {
+            "type": "text",
+            "id": "width",
+            "label": "Width one section",
+            "default": "100%"
+          },
+          {
+            "type": "text",
+            "id": "height",
+            "label": "Height one section",
+            "default": "auto%"
+          },
+          {
+            "type": "text",
+            "id": "pretitle",
+            "label": "Three section pretitle"
+          }, 
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Three section title"
+          }, 
+          {
+            "type": "text",
+            "id": "span",
+            "label": "Three section span"
+          }, 
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Three section text"
           }
         ]
       }
@@ -147,6 +188,8 @@
             "type": "main-section"
           }, {
             "type": "two-section"
+          }, {
+            "type": "three-section"
           }
         ]
       }
