@@ -3,8 +3,8 @@
     "main_baner": {
       "type": "about-us",
       "blocks": {
-        "main_section_Jp49N9": {
-          "type": "main-section",
+        "big_banner_cCwpgf": {
+          "type": "big-banner",
           "settings": {
             "image": "shopify:\/\/shop_images\/bg_about_us.png",
             "width": "100%",
@@ -13,18 +13,19 @@
             "title": "Your car is not just a means of transportation"
           }
         },
-        "two_section_4EacQk": {
-          "type": "two-section",
+        "right_banner_ypMnEq": {
+          "type": "right-banner",
           "settings": {
             "two_image": "shopify:\/\/shop_images\/pic2.png",
             "width": "100%",
             "height": "auto%",
-            "two-section__pretitle": "THE WHY",
-            "two-section__title": "The story of"
+            "pretitle": "the why",
+            "span": "NobelCar",
+            "title": "The story of"
           }
         },
-        "three_section_TfqRqt": {
-          "type": "three-section",
+        "left_banner_tFd33G": {
+          "type": "left-banner",
           "settings": {
             "image": "shopify:\/\/shop_images\/pic3.png",
             "width": "100%",
@@ -34,12 +35,23 @@
             "span": "second home",
             "text": ""
           }
+        },
+        "footer_baner_iRH9Eq": {
+          "type": "footer-baner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/footer_about_us.png",
+            "width": "100%",
+            "height": "auto%",
+            "pretitle": "",
+            "title": ""
+          }
         }
       },
       "block_order": [
-        "main_section_Jp49N9",
-        "two_section_4EacQk",
-        "three_section_TfqRqt"
+        "big_banner_cCwpgf",
+        "right_banner_ypMnEq",
+        "left_banner_tFd33G",
+        "footer_baner_iRH9Eq"
       ],
       "settings": {
       }
