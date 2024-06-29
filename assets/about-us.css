@@ -50,6 +50,8 @@
   width: 55%;
   position: absolute;
   top: calc(100vh - 17.5rem);
+  animation: bounceInLeft;
+  animation-duration: 1s;
 }
 
 .big-banner__title {
