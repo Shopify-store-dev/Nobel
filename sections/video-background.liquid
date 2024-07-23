@@ -1,0 +1,53 @@
+{% comment %}
+  This code assumes that you have already uploaded the video file to Shopify's file manager.
+  Make sure to replace 'video-file-name.mp4' with the actual file name of your video.
+{% endcomment %}
+
+{% assign videoUrl = 'video-file-name.mp4'  %}
+
+{% comment %}
+  You can customize the video background section by modifying the CSS styles.
+{% endcomment %}
+
+<style>
+  .video-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .video-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+
+<section class="video-background">
+  <video autoplay loop muted playsinline>
+    <source src="{{ section.settings.video | video_tag: autoplay: true, loop: true }}" type="video/mp4">
+  </video>
+</section>
+
+{% schema %}
+{
+  "name": "Video background",
+  "settings": [
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video file"
+    }
+  ], 
+  "presets": [
+    {
+      "name": "Video background",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

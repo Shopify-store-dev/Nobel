@@ -19,9 +19,9 @@
     <main class="right-banner">
       <div class="right-banner__title-container pl-134">
         <p class="right-banner__pretitle text-gray text-size_3_5">{{ section.blocks[1].settings.pretitle | upcase }}</p>
-        <h2 class="right-banner__title text-white">{{ section.blocks[1].settings.title }}
+        <h1 class="right-banner__title text-white">{{ section.blocks[1].settings.title }}
           <span class="right-banner__span">{{ section.blocks[1].settings.span }}</span>
-        </h2>
+        </h1>
       </div>
 
       <p class="right-banner__one-p text-white text-size_2 pl-134 m-0">
@@ -81,6 +81,9 @@
       </p>
     </section>
   </div>
+
+    <script src="{{ 'animation.js' | asset_url }}" defer="defer"></script>
+
 
 {% schema %}
   {

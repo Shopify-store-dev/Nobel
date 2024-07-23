@@ -1,89 +1,26 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "button"
-      ],
+    "video_background_gW9xnp": {
+      "type": "video-background",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "video": "shopify:\/\/files\/videos\/bg_baground.mp4"
       }
     },
-    "collection_list_NdjixD": {
-      "type": "collection-list",
+    "slider_product_custom_YBWnVt": {
+      "type": "slider-product-custom",
       "blocks": {
-        "featured_collection_wx7KMC": {
-          "type": "featured_collection",
+        "collection_PXK9WE": {
+          "type": "collection",
           "settings": {
-            "collection": "exterior-covers-shields-for-all-vehicles"
-          }
-        },
-        "featured_collection_Nxxqap": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "car-organizer"
-          }
-        },
-        "featured_collection_JVwJB8": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "collection-vac"
-          }
-        },
-        "featured_collection_GktrkT": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "devices-holder"
+            "collection": ""
           }
         }
       },
       "block_order": [
-        "featured_collection_wx7KMC",
-        "featured_collection_Nxxqap",
-        "featured_collection_JVwJB8",
-        "featured_collection_GktrkT"
+        "collection_PXK9WE"
       ],
       "settings": {
-        "title": "Collections",
-        "heading_size": "h2",
-        "image_ratio": "adapt",
-        "columns_desktop": 4,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "include_margin": true
       }
     },
     "multirow_ieNhkx": {
@@ -132,8 +69,8 @@
     }
   },
   "order": [
-    "image_banner",
-    "collection_list_NdjixD",
+    "video_background_gW9xnp",
+    "slider_product_custom_YBWnVt",
     "multirow_ieNhkx"
   ]
 }

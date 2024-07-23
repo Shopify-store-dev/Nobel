@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .main {
   width: 100%;
   margin: 0;
@@ -5,6 +11,7 @@
   z-index: -1;
   font-size: 16px;
   background: #14141a;
+  box-sizing: border-box;
 }
 
 .m-0 {
@@ -50,6 +57,8 @@
   width: 55%;
   position: absolute;
   top: calc(100vh - 17.5rem);
+  animation: bounceInLeft;
+  animation-duration: 1s;
 }
 
 .big-banner__title {
@@ -61,6 +70,7 @@
 .big-banner__pretitle {
   margin-bottom: 0.6rem;
   line-height: 10px;
+  display: inline-block;
 }
 
 .right-banner {
@@ -77,9 +87,17 @@
   z-index: 2;
 }
 
+.right-banner__pretitle {
+  font-size: 28px;
+  animation: bounceInLeft;
+  animation-duration: 1.5s;
+}
+
 .right-banner__title {
   font-size: 4.4rem;
   margin: 0;
+  animation: bounceInLeft;
+  animation-duration: 1.5s;
 }
 
 .left-banner {
@@ -88,7 +106,7 @@
 
 .right-banner__title span,
 .left-banner__title span,
-.footer-banner__text-container span{
+.footer-banner__text-container span {
   color: #2fa3f9;
 }
 
@@ -114,10 +132,6 @@
   grid-column: 4 / 13;
   grid-row: 1 / 7;
   width: 100%;
-}
-
-.right-banner__pretitle {
-  font-size: 28px;
 }
 
 .left-banner {
@@ -166,12 +180,98 @@
   object-position: left;
 }
 
-/* Media queries for responsive design */
-@media (max-width: 1024px) {
+/* Середні мобільні пристрої (портретна орієнтація) */
+@media (max-width: 375px) {
+  .main {
+    width: 100vw;
+    font-size: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 20px;
+  }
+
+  .big-banner {
+    position: relative;
+    margin-bottom: 60px;
+  }
+
+  .pl-134 {
+    padding-left: 0;
+  }
+
+  .big-banner__text-container {
+    width: 100%;
+    padding-left: 2.5rem;
+    position: absolute;
+    top: 15rem;
+  }
+
+  .big-banner__title {
+    font-size: 2rem;
+  }
+
+  .text-size_2 {
+    font-size: 1.5rem;
+  }
+
+  .right-banner {
+    grid-template-columns: repeat(2, 1fr);
+    
+  }
+
+  .right-banner__image-container {
+    grid-column: 1 / 13;
+    grid-row: 1 / 6;
+  }
+
+  .right-banner__title-container {
+    grid-column: 1 / 13;
+    gap: 2.5em;
+    grid-row: 6;
+  }
+
+  .right-banner__one-p {
+    grid-column: 1 / 13;
+    grid-row: 7;
+  }
+
+  .right-banner__two-p {
+    grid-column: 1 / 13;
+    grid-row: 8;
+  }
+
+  .right-banner__three-p {
+    grid-column: 1 / 13;
+    grid-row: 7;
+  }
+
 }
 
+/* Великі мобільні пристрої (портретна орієнтація) */
+@media (max-width: 425px) {
+  /* Стили */
+}
+
+/* Планшети (портретна орієнтація) */
 @media (max-width: 768px) {
+  /* Стили */
 }
 
-@media (max-width: 480px) {
+/* Планшети (ландшафтна орієнтація) */
+@media (max-width: 1024px) {
+  /* Стили */
+}
+
+/* Ноутбуки і маленькі десктопи */
+@media (max-width: 1280px) {
+  /* Стили */
+}
+
+/* Середні десктопи */
+@media (max-width: 1440px) {
+  /* Стили */
+}
+
+/* Великі десктопи */
+@media (min-width: 1441px) {
+  /* Стили */
 }
